@@ -41,32 +41,32 @@
 #include <opencv2/core/utils/logger.hpp>
 #include <opencv2/highgui/highgui_c.h>
 #include <opencv2/imgproc/imgproc_c.h>
-#include <opencv2/shape.hpp>
+//#include <opencv2/shape.hpp>
 #include <opencv2/stitching.hpp>
 #include <opencv2/video.hpp>
 #ifndef _WINRT_DLL
-#include <opencv2/superres.hpp>
-#include <opencv2/superres/optical_flow.hpp>
+//#include <opencv2/superres.hpp>
+//#include <opencv2/superres/optical_flow.hpp>
 #endif
 
 // opencv_contrib
-#include <opencv2/aruco.hpp>
-#include <opencv2/aruco/charuco.hpp>
-#include <opencv2/bgsegm.hpp>
-#include <opencv2/img_hash.hpp>
-#include <opencv2/line_descriptor.hpp>
-#include <opencv2/optflow.hpp>
-#include <opencv2/quality.hpp>
-#include <opencv2/tracking.hpp>
-#include <opencv2/xfeatures2d.hpp>
-#include <opencv2/ximgproc.hpp>
-#include <opencv2/xphoto.hpp>
+//#include <opencv2/aruco.hpp>
+//#include <opencv2/aruco/charuco.hpp>
+//#include <opencv2/bgsegm.hpp>
+//#include <opencv2/img_hash.hpp>
+//#include <opencv2/line_descriptor.hpp>
+//#include <opencv2/optflow.hpp>
+//#include <opencv2/quality.hpp>
+//#include <opencv2/tracking.hpp>
+//#include <opencv2/xfeatures2d.hpp>
+//#include <opencv2/ximgproc.hpp>
+//#include <opencv2/xphoto.hpp>
 #ifndef _WINRT_DLL
-#include <opencv2/wechat_qrcode.hpp>
+//#include <opencv2/wechat_qrcode.hpp>
 #include <opencv2/dnn.hpp>
-#include <opencv2/dnn_superres.hpp>
-#include <opencv2/face.hpp>
-#include <opencv2/text.hpp>
+//#include <opencv2/dnn_superres.hpp>
+//#include <opencv2/face.hpp>
+//#include <opencv2/text.hpp>
 #endif
 
 #include <vector>
