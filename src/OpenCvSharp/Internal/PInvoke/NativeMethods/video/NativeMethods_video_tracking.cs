@@ -147,6 +147,22 @@ static partial class NativeMethods
     [Pure, DllImport(DllExtern, CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     public static extern ExceptionStatus video_Ptr_TrackerGOTURN_get(IntPtr ptr, out IntPtr returnValue);
 
+    //tracker nano
+    [Pure, DllImport(DllExtern, CallingConvention = CallingConvention.Cdecl, ExactSpelling = true, BestFitMapping = false, ThrowOnUnmappableChar = true,
+            EntryPoint = "video_TrackerNano_create")]
+    public static extern ExceptionStatus video_TrackerNano_create([MarshalAs(StringUnmanagedTypeWindows)]
+    string backbone_onnxFile, [MarshalAs(StringUnmanagedTypeWindows)]
+    string neckhead_onnxFile, out IntPtr returnValue);
+
+    [Pure, DllImport(DllExtern, CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    public static extern ExceptionStatus video_Ptr_TrackerNano_delete(IntPtr ptr);
+
+    [Pure, DllImport(DllExtern, CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    public static extern ExceptionStatus video_Ptr_TrackerNano_get(IntPtr ptr, out IntPtr returnValue);
+
+    [Pure, DllImport(DllExtern, CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    public static extern ExceptionStatus video_TrackerNano_GetTrackingScore(IntPtr tracker_ptr, ref float score);
+
     #endregion
 
     // TODO

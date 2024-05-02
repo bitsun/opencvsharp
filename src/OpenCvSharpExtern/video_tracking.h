@@ -332,6 +332,36 @@ CVAPI(ExceptionStatus) video_Ptr_TrackerGOTURN_get(cv::Ptr<cv::TrackerGOTURN>* p
     END_WRAP
 }
 
+CVAPI(ExceptionStatus) video_TrackerNano_create(const char* backbone_onnxfile_path, const char* neckhead_onnxfile_path, cv::Ptr<cv::TrackerNano>** tracker_ptr) {
+    BEGIN_WRAP
+    cv::TrackerNano::Params param;
+    param.backbone = std::string(backbone_onnxfile_path);
+    param.neckhead = std::string(neckhead_onnxfile_path);
+    const auto p = cv::TrackerNano::create(param);
+    *tracker_ptr = clone(p);
+    END_WRAP
+}
+
+CVAPI(ExceptionStatus) video_Ptr_TrackerNano_delete(cv::Ptr<cv::TrackerNano>* ptr)
+{
+    BEGIN_WRAP
+    delete ptr;
+    END_WRAP
+}
+
+CVAPI(ExceptionStatus) video_Ptr_TrackerNano_get(cv::Ptr<cv::TrackerNano>* ptr, cv::TrackerNano** returnValue)
+{
+    BEGIN_WRAP
+    *returnValue = ptr->get();
+    END_WRAP
+}
+
+CVAPI(ExceptionStatus) video_TrackerNano_GetTrackingScore(cv::Ptr<cv::TrackerNano>* ptr, float* score)
+{
+    BEGIN_WRAP
+    *score = ptr->get()->getTrackingScore();
+    END_WRAP
+}
 #pragma endregion
 
 // TODO
