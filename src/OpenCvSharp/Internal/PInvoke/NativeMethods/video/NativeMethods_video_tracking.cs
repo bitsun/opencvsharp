@@ -161,7 +161,7 @@ static partial class NativeMethods
     public static extern ExceptionStatus video_Ptr_TrackerNano_get(IntPtr ptr, out IntPtr returnValue);
 
     [Pure, DllImport(DllExtern, CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-    public static extern ExceptionStatus video_TrackerNano_GetTrackingScore(IntPtr tracker_ptr, ref float score);
+    public static extern ExceptionStatus video_TrackerNano_GetTrackingScore(IntPtr tracker_ptr, out float score);
 
     #endregion
 

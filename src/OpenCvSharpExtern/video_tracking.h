@@ -356,10 +356,10 @@ CVAPI(ExceptionStatus) video_Ptr_TrackerNano_get(cv::Ptr<cv::TrackerNano>* ptr, 
     END_WRAP
 }
 
-CVAPI(ExceptionStatus) video_TrackerNano_GetTrackingScore(cv::Ptr<cv::TrackerNano>* ptr, float* score)
+CVAPI(ExceptionStatus) video_TrackerNano_GetTrackingScore(cv::TrackerNano* ptr, float* score)
 {
     BEGIN_WRAP
-    *score = ptr->get()->getTrackingScore();
+    *score = ptr->getTrackingScore();
     END_WRAP
 }
 #pragma endregion
