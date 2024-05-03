@@ -362,6 +362,36 @@ CVAPI(ExceptionStatus) video_TrackerNano_GetTrackingScore(cv::TrackerNano* ptr, 
     *score = ptr->getTrackingScore();
     END_WRAP
 }
+
+CVAPI(ExceptionStatus) video_TrackerVit_create(const char* onnx_file_path, cv::Ptr<cv::TrackerVit>** tracker_ptr) {
+    BEGIN_WRAP
+    cv::TrackerVit::Params params;
+    params.net = std::string(onnx_file_path);
+    const auto p = cv::TrackerVit::create(params);
+    *tracker_ptr = clone(p);
+    END_WRAP
+}
+
+CVAPI(ExceptionStatus) video_Ptr_TrackerVit_delete(cv::Ptr<cv::TrackerVit>* ptr)
+{
+    BEGIN_WRAP
+    delete ptr;
+    END_WRAP
+}
+
+CVAPI(ExceptionStatus) video_Ptr_TrackerVit_get(cv::Ptr<cv::TrackerVit>* ptr, cv::TrackerVit** returnValue)
+{
+    BEGIN_WRAP
+    *returnValue = ptr->get();
+    END_WRAP
+}
+
+CVAPI(ExceptionStatus) video_TrackerVit_GetTrackingScore(cv::TrackerVit* ptr, float* score)
+{
+    BEGIN_WRAP
+    *score = ptr->getTrackingScore();
+    END_WRAP
+}
 #pragma endregion
 
 // TODO
